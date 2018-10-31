@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_072741) do
+ActiveRecord::Schema.define(version: 2018_10_31_141807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_10_31_072741) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["status"], name: "index_appointments_on_status"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 2018_10_31_072741) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["id"], name: "index_clients_on_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -46,12 +48,14 @@ ActiveRecord::Schema.define(version: 2018_10_31_072741) do
     t.float "purchased_at_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["referrer"], name: "index_purchases_on_referrer"
   end
 
   create_table "slot_variations", force: :cascade do |t|
     t.integer "slot_id"
     t.integer "variation_id"
     t.float "price"
+    t.index ["price"], name: "index_slot_variations_on_price"
   end
 
   create_table "slots", force: :cascade do |t|
@@ -67,6 +71,7 @@ ActiveRecord::Schema.define(version: 2018_10_31_072741) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_variations_on_name"
   end
 
 end
