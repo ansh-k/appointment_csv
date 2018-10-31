@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location_id: 1
+  begin_at: 2018-10-31 12:48:09
+  end_at: 2018-10-31 12:48:09
+  purchase_id: 1
+
+two:
+  location_id: 1
+  begin_at: 2018-10-31 12:48:09
+  end_at: 2018-10-31 12:48:09
+  purchase_id: 1
